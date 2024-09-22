@@ -9,15 +9,24 @@ const switch1 = document.getElementById('switch-1');
 const switch2 = document.getElementById('switch-2');
 // Function to handle circle click event
 
+
 function handleCircleClick(circle, index) {
     // Reset scale for all circles
     circles.forEach(c => {
         c.classList.remove('active');
-        c.style.transform = 'scale(1)';
+        c.style.transform = 'scale(0.5)';
     });
 
     // Add 'active' class to clicked circle
     circle.classList.add('active');
+
+    // Update the background image based on the clicked circle
+    // const imgs = ["src/store.png", "src/inv.png", "src/Play image.jpeg", "src/archi.jpeg", "src/set.jpeg"];
+    // const backgroundImage = circle.getAttribute('data-background');
+    // document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    // document.body.style.backgroundSize = 'cover'; // Make sure the background covers the whole page
+    // document.body.style.backgroundPosition = 'center'; // Center the background image
+    // document.body.style.transition = 'background-image 0.8s ease'; // Smooth transition for background change
 
     // Center the clicked circle
     const circleRect = circle.getBoundingClientRect();
@@ -27,14 +36,6 @@ function handleCircleClick(circle, index) {
     const offsetX = containerCenterX - circleCenterX;
     container.style.transition = 'transform 0.8s ease'; // Smooth transition
     container.style.transform = `translateX(${offsetX}px)`;
-
-    // If "PLAY" circle clicked, show modal
-    if (circle.id === 'circle3') {
-        const playText = circle.querySelector('.circle-text');
-        playText.addEventListener('click', () => {
-            playModal.style.display = 'block'; // Show modal
-        });
-    }
 
     // Gradually scale other circles
     const activeScale = 2;
@@ -51,6 +52,7 @@ function handleCircleClick(circle, index) {
 }
 
 
+
 modeButtons.forEach(button => {
     button.addEventListener('click', () => {
         const imageSrc = button.getAttribute('data-image'); // Get the image src from data attribute
@@ -60,23 +62,21 @@ modeButtons.forEach(button => {
     });
 });
 
-// Add event listeners to all circles
 circles.forEach((circle, index) => {
-    circle.addEventListener('click', () => handleCircleClick(circle, index));
+    circle.addEventListener('click', (e) =>{
+        handleCircleClick(circle, index);
+    });
 });
 
-// Automatically trigger click on the third circle on page load
 window.addEventListener('load', () => {
     const thirdCircle = circles[2];
     handleCircleClick(thirdCircle, 2);
 });
 
-// Close modal when the close button is clicked
 closeModalBtn.addEventListener('click', () => {
     playModal.style.display = 'none';
 });
 
-// Close modal when clicking outside the modal content
 window.addEventListener('click', (event) => {
     if (event.target === playModal) {
         playModal.style.display = 'none';
@@ -84,15 +84,13 @@ window.addEventListener('click', (event) => {
 });
 
 function toggleSwitch(selectedSwitch, otherSwitch) {
-    // Set the selected switch to "on"
-    selectedSwitch.setAttribute('data-state', 'on');
-    selectedSwitch.style.backgroundColor = '#FBCC0A'; // Green for "on"
 
-    // Set the other switch to "off"
+    selectedSwitch.setAttribute('data-state', 'on');
+    selectedSwitch.style.backgroundColor = '#FBCC0A';
+
     otherSwitch.setAttribute('data-state', 'off');
-    otherSwitch.style.backgroundColor = '#383838'; // Yellow for "off"
+    otherSwitch.style.backgroundColor = '#383838';
 }
 
-// Add event listeners for the switch buttons
 switch1.addEventListener('click', () => toggleSwitch(switch1, switch2));
 switch2.addEventListener('click', () => toggleSwitch(switch2, switch1));

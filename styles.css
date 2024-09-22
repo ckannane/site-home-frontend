@@ -34,6 +34,7 @@ header {
 .logo-img {
     max-width: 200px; /* Adjust size as needed */
     height: auto;
+    align-self: center;
 }
 
 .circle {
@@ -44,7 +45,7 @@ header {
     height: 200px;
     background-color: #FBCC0A;
     border-radius: 50%;
-    transition: transform 0.5s ease, z-index 0.5s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.5s ease, z-index 0.5s ease;
     cursor: pointer;
     position: relative;
     text-align: center; /* Centers text inside the element */
@@ -99,7 +100,7 @@ header {
     z-index: 10;
     box-shadow: 0 4px 50px rgb(255, 196, 0);
     border: 3px solid #ffffff;
-    transform: transform 0.3s ease, z-index 0.3s ease;
+    transform: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, z-index 0.3s ease;
 }
 
 .circle.active .circle-text {
@@ -235,4 +236,264 @@ header {
 
 .small-button[data-state="off"] {
     background-color: #383838;
+}
+
+.log-contain{
+
+    width: 600px;
+    height: 500px;
+    background-color: rgba(255, 208, 0, 0.187);
+    border-radius: 70px;
+    border: 6px solid #FBCC0A;
+    position: relative;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    flex-direction: column; 
+    display: flex; /* Enable Flexbox */
+}
+
+.login {
+    align-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    align-items: center; /* Center inputs horizontally */
+    gap: 10px; /* Add space between inputs */
+}
+
+input[type="text"] {
+    outline: none;
+    margin: 10px;
+    width: 400px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]:hover {
+    padding: 13px 13px;
+    width: 450px;
+    box-shadow: 0px 0px 10px rgb(255, 196, 0);
+    transition: all 0.2s ease-out;
+}
+
+input[type="password"] {
+    outline: none;
+    margin: 10px;
+    width: 400px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="password"]:hover {
+    width: 450px;
+    padding: 13px 13px;
+    box-shadow: 0px 0px 10px rgb(255, 196, 0);
+    transition: all 0.2s ease-out;
+}
+
+.line{
+    margin:10px;
+    width: 450px;
+    border: none; /* Remove the default border */
+    border-bottom: 5px solid #FBCC0A; /* Add a custom bottom border */
+    border-radius: 50%;
+ /* Add rgb(255, 255, 255) space above the line */
+}
+
+.button-logs{
+    display: flex; /* Use flexbox to arrange buttons */
+    justify-content: space-evenly; /* Space buttons evenly */
+    width: 80%; /* Set the width relative to the container */
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.button-logs button {
+    width: 100px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    padding: 10px; /* Add padding for better appearance */
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.button-logs button:nth-child(1) {
+    background-color: #ffffff; /* Red-Orange */
+    border: 2px solid #ffffff;
+}
+
+.button-logs button:nth-child(2) {
+    background-color: #166fe3; /* Light Blue */
+    border: 2px solid #166fe3;
+}
+
+.button-logs button:nth-child(3) {
+    
+    background-color: #a42e2e; /* Light Green */
+    border: 2px solid #a42e2e;
+}
+
+/* Hover effect for buttons */
+.button-logs button:hover {
+    background-color: #ffcc00; /* Light Green */
+    border: 2px solid #ffcc00;
+    color: #181818;
+}
+
+.btn1 {
+    background-image: url('src/42-logo.png'); /* Image for the first button */
+    background-size: 50%;
+}
+
+.btn2 {
+    background-image: url('src/fb-logo.png'); /* Image for the second button */
+    background-size: 20%;
+}
+
+.btn3 {
+    background-image: url('src/google-logo.png'); /* Image for the third button */
+    background-size: 30%;
+}
+
+/* Hover effect for buttons */
+.button-logs button:hover {
+    background-color: #ffcc00; /* Light Yellow on hover */
+    border: 2px solid #ffcc00;
+}
+.logo-log {
+    display: block;         /* Ensure it's a block-level element */
+    margin-left: auto;     /* Center it horizontally */
+    margin-right: auto;    /* Center it horizontally */
+    max-width: 200px;      /* Maximum size */
+    width: 100%;           /* Use full width of its container */
+    height: auto;          /* Maintain aspect ratio */
+    margin-bottom: 20px;   /* Space below the logo */
+}
+
+.submit-button {
+    padding: 8px 110px;
+    display: inline-block;
+    background-color: #202020; /* Green background */
+    color: white; /* White text color */
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    border: 2px solid #202020; /* Border color matching the background */
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+    transition: border-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out, color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #ffcc00; /* Darker green background on hover */
+    border-color: #ffcc00; /* Darker border on hover */
+    color: #202020;
+    box-shadow: 0px 0px 50px rgb(255, 196, 0);
+    transition: box-shadow 0.8s ease-in-out,color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+
+/* Style the checkbox container */
+.stay-sign {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the checkbox */
+.stay-sign input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Style the label */
+.stay-sign label {
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif; /* Makes the label clickable */
+}
+
+.Sign-in{
+    display: flex; /* Use flexbox to arrange buttons */
+    gap:10px;
+}
+
+.message{
+    font-size: 12px;
+    font-family: 'Kanit', sans-serif;
+    color :rgb(255, 196, 0);
+    padding-top: 12px;
+}
+
+.Sign-in-button{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    padding: 11px 0;
+    color :rgb(32, 32, 32);
+    width: 80px;
+    height: 15px; 
+    background-color: #FBCC0A;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out ,padding 0.3s ease-in-out;
+}
+
+.Sign-in-button:hover{
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    padding: 11px 11px;
+    color :rgb(105, 84, 0);
+    width: 80px;
+    height: 15px; 
+    background-color: #fbe383;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out ,padding 0.3s ease-in-out;
+}
+
+.registing{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(255, 208, 0, 0.187);
+    border-radius: 70px;
+    border: 6px solid #FBCC0A;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.settings-toggle {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.settings-panel {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
