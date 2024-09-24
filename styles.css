@@ -12,35 +12,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px; /* Keeps the gap between circles constant */
-    position: relative; /* Allows positioning of circles within the container */
-    transition: transform 0.8s ease; /* Smooth transition for container movement */
+    gap: 5px; 
+    position: relative; 
+    transition: transform 0.8s ease; 
 }
 
 header {
     width: 100%;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px 0;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000; /* Ensure it stays on top */
-    background-color: transparent; /* Or match it with your page's background */
+    z-index: 1000;
+    background-color: transparent;
+}
+
+.header-container {
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;     /* Center the content vertically */
+    position: relative;      /* Position relative so absolute/fixed elements don't affect flow */
 }
 
 .logo-img {
-    max-width: 200px; /* Adjust size as needed */
+    margin-left: 220px;
+    max-width: 200px;
     height: auto;
     align-self: center;
 }
 
 .circle {
-    display: flex; /* Allows centering of text inside the circle */
-    justify-content: center; /* Horizontally centers the text */
-    align-items: center; /* Vertically centers the text */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     width: 200px;
     height: 200px;
     background-color: #FBCC0A;
@@ -48,50 +55,54 @@ header {
     transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.5s ease, z-index 0.5s ease;
     cursor: pointer;
     position: relative;
-    text-align: center; /* Centers text inside the element */
-    color: white; /* Text color */
-    font-size: 24px; /* Adjust the font size */
-    font-family: 'Kanit', sans-serif; /* Apply Kanit font to circles */
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: 'Kanit', sans-serif;
     margin: -25px;
+}
+
+.circle:hover{
+    background-color: #fade6d;
 }
 
 .circle-text {
     opacity: 0;
     
-    position: relative; /* Ensures the text stays inside the circle */
-    z-index: 1; /* Keeps the text above the circle background */
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
-    transition: opacity 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for text shadow */
+    position: relative; 
+    z-index: 1; 
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); 
+    transition: opacity 0.3s ease, text-shadow 0.3s ease; 
 }
 .circle.active .circle-description {
-    opacity: 1; /* Initially hidden until hover */
+    opacity: 1; 
 }
 
 .circle-description{
     opacity: 0;
-    position: absolute; /* Ensures the text stays inside the circle */
+    position: absolute;
     bottom: -30px;
     font-size: 8px;
     font-family: 'arial';
-    z-index: 1; /* Keeps the text above the circle background */
+    z-index: 1;
 }
 
 .circle-image {
     position: absolute;
-    width: 80px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    top: 50%; /* Vertically center the image */
-    left: 50%; /* Horizontally center the image */
-    transform: translate(-50%, -50%); /* Center the image within the circle */
-    z-index: 2; /* Ensure the image appears above the circle background */
+    width: 80px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     transition: transform 0.3s ease, top 0.3s ease , left 0.3s ease;
 }
 
 .circle.active .circle-image {
-    width: 50px; /* Adjust the width as needed */
-    top: 25%; /* Vertically center the image */
-    left: 50%; /* Horizontally center the image */
-    transform: translate(-50%, -50%) scale(1.2); /* Scale the image slightly when the circle is active */
+    width: 50px;
+    top: 25%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .circle.active {
@@ -496,4 +507,55 @@ input[type="password"]:hover {
     padding: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: fixed;
+    justify-content: center;
+    background-color: rgb(255, 196, 0);
+    color: rgb(46, 46, 46);
+    border-radius: 25px;
+    display: inline-block;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: top;
+    text-align: center;
+    top:0px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.menu-icon.active{
+    /* padding: 0px 10px; */
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-content {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-icon.active .menu-content {
+    transition: all 0.3s ease-in-out;
+    opacity: 1; /* Show content when active */
+    max-height: 500px; /* Limit the height of content to prevent overflow */
+}
+
+input[type=search]{
+    background-color: rgba(255, 196, 0,0);
+    outline: none;
+    margin-top: -50px;
+    margin-right: 10px;
+    width: 200px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 25px;
+    color: #fff;
+    border: 2px solid #ffffff;
 }

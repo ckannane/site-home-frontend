@@ -94,3 +94,18 @@ function toggleSwitch(selectedSwitch, otherSwitch) {
 
 switch1.addEventListener('click', () => toggleSwitch(switch1, switch2));
 switch2.addEventListener('click', () => toggleSwitch(switch2, switch1));
+
+document.getElementById('menu-icon').addEventListener('click', function() {
+    const content = document.getElementById('menu-content');
+    if (content.style.display === 'block') {
+        content.style.display = 'none'; // Hide content
+    } else {
+        content.style.display = 'block'; // Show content
+    }
+});
+
+const menu = document.querySelector('.menu-icon');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('active');
+});
