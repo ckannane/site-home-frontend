@@ -9,6 +9,10 @@ const switch1 = document.getElementById('switch-1');
 const switch2 = document.getElementById('switch-2');
 // Function to handle circle click event
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 function handleCircleClick(circle, index) {
     // Reset scale for all circles
@@ -29,14 +33,15 @@ function handleCircleClick(circle, index) {
     // document.body.style.transition = 'background-image 0.8s ease'; // Smooth transition for background change
 
     // Center the clicked circle
+    
+    // delay(1000);
     const circleRect = circle.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
     const circleCenterX = circleRect.left + circleRect.width / 2;
     const containerCenterX = containerRect.left + containerRect.width / 2;
     const offsetX = containerCenterX - circleCenterX;
-    container.style.transition = 'transform 0.8s ease'; // Smooth transition
+    container.style.transition = 'transform 0.8s ease-in-out'; // Smooth transition
     container.style.transform = `translateX(${offsetX}px)`;
-
     // Gradually scale other circles
     const activeScale = 2;
     circles.forEach((otherCircle, otherIndex) => {

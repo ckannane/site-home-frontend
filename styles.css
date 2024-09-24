@@ -52,16 +52,25 @@ header {
     height: 200px;
     background-color: #FBCC0A;
     border-radius: 50%;
-    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.5s ease, z-index 0.5s ease;
     cursor: pointer;
     position: relative;
     text-align: center;
     color: white;
     font-size: 24px;
     font-family: 'Kanit', sans-serif;
-    margin: -25px;
+    transition: all 0.5s ease;
+    /* margin: 50px; */
 }
 
+.circle.active {
+    margin: 141px;
+    transform: scale(2);
+    z-index: 10;
+    /* padding: 50px; */
+    box-shadow: 0 4px 50px rgb(255, 196, 0);
+    border: 3px solid #ffffff;
+    transition: all 0.5s ease;
+}
 .circle:hover{
     background-color: #fade6d;
 }
@@ -105,14 +114,7 @@ header {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-.circle.active {
-    margin: 141px;
-    transform: scale(2);
-    z-index: 10;
-    box-shadow: 0 4px 50px rgb(255, 196, 0);
-    border: 3px solid #ffffff;
-    transform: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, z-index 0.3s ease;
-}
+
 
 .circle.active .circle-text {
     opacity: 1;
