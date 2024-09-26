@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #252525;
+    /* background: radial-gradient(circle, green, rgba(37, 37, 37, 0.5)); */
     overflow: hidden;
 }
 
@@ -14,7 +15,7 @@ body {
     align-items: center;
     gap: 5px; 
     position: relative; 
-    transition: transform 0.8s ease; 
+    /* transition: transform 0.8s ease;  */
 }
 
 header {
@@ -58,18 +59,22 @@ header {
     color: white;
     font-size: 24px;
     font-family: 'Kanit', sans-serif;
-    transition: all 0.5s ease;
-    /* margin: 50px; */
+    transition: all 0.8s ease-in-out,border 1s ease-in-out 0.1s;
+    z-index: 1;
+    margin: 20px;
+    opacity: 0.8;
 }
 
 .circle.active {
-    margin: 141px;
+    /* margin: 200px; */
     transform: scale(2);
-    z-index: 10;
+    z-index: 2;
+    opacity: 1;
     /* padding: 50px; */
+    background-color:rgba(255, 196, 0, 1);
     box-shadow: 0 4px 50px rgb(255, 196, 0);
     border: 3px solid #ffffff;
-    transition: all 0.5s ease;
+    transition: all 0.8s ease-in-out,border 1s ease-in-out 0.1s;
 }
 .circle:hover{
     background-color: #fade6d;
@@ -121,6 +126,7 @@ header {
     box-shadow: #252525;
     top: 5%;
     transform: scale(2.5);
+    transition:opacity 1s ease-in-out, transform 0.3s ease, top 0.3s ease , left 0.3s ease;
 }
 
 /* Modal styling */
