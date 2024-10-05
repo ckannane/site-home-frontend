@@ -55,7 +55,7 @@ function handleCircleClick(circle, index) {
             const distance = Math.abs(index - otherIndex);
             let scale = 1 - 0.2 * distance;
             if (scale < 0.5) scale = 0.4;
-            otherCircle.style.transform = `scale(${scale})`;
+            otherCircle.style.transform = `scale(${1})`;
         } else {
             otherCircle.style.transform = `scale(${activeScale})`;
         }
@@ -157,4 +157,30 @@ profile_messanger.addEventListener('click', function(){
 
 document.querySelector('.chat-topic').addEventListener('click', function(){
     chat_messanger_user.classList.toggle('active');
+});
+
+function sendMessage() {
+    // Get the input value
+    var messageText = document.getElementById('textInput').value;
+
+    if (messageText.trim() !== "") {
+        // Create a new div for the message
+        var newMessage = document.createElement('div');
+        newMessage.classList.add('chat-message-user'); // Add message class for styling
+        newMessage.textContent = messageText;
+
+        // Append the new message to the chat-message container
+        document.getElementById('chatMessages').appendChild(newMessage);
+
+        // Clear the input field after sending the message
+        document.getElementById('textInput').value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+    }
+}
+
+document.getElementById('textInput').addEventListener('keypress', function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission or default behavior
+        sendMessage(); // Call the sendMessage function
+    }
 });
