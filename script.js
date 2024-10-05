@@ -60,6 +60,19 @@ function handleCircleClick(circle, index) {
             otherCircle.style.transform = `scale(${activeScale})`;
         }
     });
+
+    // {
+    //     const middle_circle = document.querySelectorAll('.circle')[2];
+    //     const mid_pos = middle_circle.getBoundingClientRect().left + (middle_circle.getBoundingClientRect().width / 2);
+    //     const current_circle_left = circle.getBoundingClientRect().left + (circle.getBoundingClientRect().width / 2);
+    //     const difference = Math.abs(mid_pos - (current_circle_left));
+    //     container.style.transform = `translateX(${
+    //         mid_pos > current_circle_left ? difference : -difference
+    //     }px)`
+    //     circle.style.transform = `scale(2)`
+    //     console.log("diff", difference, "center:" ,mid_pos, "right:", current_circle_left);
+
+    // }
 }
 
 
@@ -115,8 +128,33 @@ document.getElementById('menu-icon').addEventListener('click', function() {
     }
 });
 
+const sms = document.querySelector('.messanger');
+const sms_icon = document.querySelector('.messanger-icon')
+
+sms_icon.addEventListener('click', function() {
+    sms.classList.toggle('active');
+    sms_icon.classList.toggle('active');
+});
+
 const menu = document.querySelector('.menu-icon');
 
 menu.addEventListener('click', () =>{
     menu.classList.toggle('active');
+});
+
+const chat_messanger_user = document.querySelector('.chat-border');
+const chat_messanger_user_close_btn = document.querySelector('.chat-close-btn');
+const chat_messanger_user_channel = document.querySelector('.sms');
+const profile_messanger = document.querySelector('.profile');
+
+chat_messanger_user_close_btn.addEventListener('click', function(){
+    chat_messanger_user.style.display ='none';
+});
+
+profile_messanger.addEventListener('click', function(){
+    chat_messanger_user.style.display ='flex';
+});
+
+document.querySelector('.chat-topic').addEventListener('click', function(){
+    chat_messanger_user.classList.toggle('active');
 });

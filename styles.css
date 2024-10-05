@@ -2,10 +2,9 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: #252525;
-    /* background: radial-gradient(circle, green, rgba(37, 37, 37, 0.5)); */
+    background: radial-gradient(circle, green, rgba(0, 0, 0, 1));
     overflow: hidden;
 }
 
@@ -15,7 +14,7 @@ body {
     align-items: center;
     gap: 5px; 
     position: relative; 
-    /* transition: transform 0.8s ease;  */
+    transition: transform 0.8s ease; 
 }
 
 header {
@@ -59,14 +58,15 @@ header {
     color: white;
     font-size: 24px;
     font-family: 'Kanit', sans-serif;
-    transition: all 0.8s ease-in-out,border 1s ease-in-out 0.1s;
+    transition: all 0.8s ease-in-out;
     z-index: 1;
     margin: 20px;
     opacity: 0.8;
 }
+/* When the current .circle is active, push its next sibling (adjacent) */
 
 .circle.active {
-    /* margin: 200px; */
+    margin: 20px;
     transform: scale(2);
     z-index: 2;
     opacity: 1;
@@ -74,7 +74,7 @@ header {
     background-color:rgba(255, 196, 0, 1);
     box-shadow: 0 4px 50px rgb(255, 196, 0);
     border: 3px solid #ffffff;
-    transition: all 0.8s ease-in-out,border 1s ease-in-out 0.1s;
+    transition: all 0.8s ease-in-out;
 }
 .circle:hover{
     background-color: #fade6d;
@@ -129,6 +129,9 @@ header {
     transition:opacity 1s ease-in-out, transform 0.3s ease, top 0.3s ease , left 0.3s ease;
 }
 
+.circle.active .circle-text:hover{
+    text-shadow: 0px 0px 10px rgba(0, 250, 46, 0.85)
+}
 /* Modal styling */
 .modal {
     display: none; /* Hidden by default */
@@ -169,6 +172,18 @@ header {
 
 .close-btn:hover {
     color: black;
+}
+
+.chat-close-btn {
+    color:black;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-close-btn:hover {
+    color: white;
 }
 
 .modal-body {
@@ -450,6 +465,7 @@ input[type="password"]:hover {
 }
 
 .message{
+
     font-size: 12px;
     font-family: 'Kanit', sans-serif;
     color :rgb(255, 196, 0);
@@ -566,4 +582,160 @@ input[type=search]{
     border-radius: 25px;
     color: #fff;
     border: 2px solid #ffffff;
+}
+
+.messanger{
+    position: fixed;
+    top: 75%;
+    left: 94%;
+    align-items: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.messanger-list{
+    padding-top: 5px;
+    width: 60px;
+    height: 800px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color:#FBCC0A;
+    justify-items: center;
+    justify-content: center;
+    align-items: space-between;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.messanger-list::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.messanger-list::-webkit-scrollbar-thumb {
+    background-color: gold; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for thumb */
+}
+
+.messanger-list::-webkit-scrollbar-track {
+    background-color: black; /* Background color for scrollbar track */
+}
+.messanger-icon{
+    cursor: pointer;
+    transform: scale(0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.messanger-icon.active{
+    transform: scale(0.4);
+}
+
+.messanger.active{
+    top: 32%;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile{
+    margin: 5px;
+    background-color: #202020;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.sms{
+    display: flex;
+    flex-direction: row;
+    right: 6.5%;
+    position: absolute;
+    bottom: -2.2%;
+    transition: all 0.2s ease-in-out;
+}
+
+.chat-border{
+    flex-direction: row;
+    position: relative;
+    bottom: -355px;
+    right: 0px;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    width: 300px;
+    height: 400px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #FBCC0A;
+    transition: all 0.2s ease-in-out;
+}
+
+.chat-border.active{
+    bottom: 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+.chat-message{
+    background-color: #202020;
+    width: 98%;
+    height: 75%;
+}
+
+input[type=text-chat]{
+    font-size: 15px;
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    border: 1px #fade6d;
+    outline: none;
+}
+
+.chat-under{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 98%;
+    height: 40px;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.import{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    width: 70%;
+    height: 100%;
+}
+
+.folder{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #2ea453;
+}
+
+.send{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(src/Send.png);
+    background-size: 60%; /* Adjusts the image to fit within the button */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    cursor: pointer; /* Changes cursor to pointer when hovered */
+    background-color: #4a4a4a;
+}
+.send:hover{
+    background-color: #666666;
+}
+.chat-topic
+{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 80%;
+    height: 10%;
+    cursor: pointer;
 }
