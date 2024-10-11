@@ -132,7 +132,7 @@ menu.addEventListener('click', () =>{
 const chat_messanger_user = document.querySelector('.chat-border');
 const chat_messanger_user_close_btn = document.querySelector('.chat-close-btn');
 const chat_messanger_user_channel = document.querySelector('.sms');
-const profile_messanger = document.querySelector('.profile');
+const profile_messanger = document.querySelector('.friend-profile');
 
 chat_messanger_user_close_btn.addEventListener('click', function(){
     chat_messanger_user.style.display ='none';

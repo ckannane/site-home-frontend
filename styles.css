@@ -839,7 +839,7 @@ input[type=text-chat]{
     align-items: center;
     justify-items: center;
 	background-color: rgb(49, 48, 41);
-    border: 4px solid #ffc800;
+    border: 2px solid #ffc800;
     border-radius: 20px;
 	width: 85%;
 	height: 90%;
