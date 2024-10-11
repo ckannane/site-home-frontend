@@ -24,23 +24,31 @@ function handleCircleClick(circle, index) {
     // Add 'active' class to clicked circle
     circle.classList.add('active');
 
+    // Show modal if circle 3 is clicked
     if (circle.id === 'circle3') {
         const playText = circle.querySelector('.circle-text');
         playText.addEventListener('click', () => {
             playModal.style.display = 'block'; // Show modal
         });
     }
-    // Update the background image based on the clicked circle
-    // const imgs = ["src/store.png", "src/inv.png", "src/Play image.jpeg", "src/archi.jpeg", "src/set.jpeg"];
+
+    // Background image change with fading effect
     const backgroundImage = circle.getAttribute('data-background');
 
-    document.body.style.backgroundImage = `radial-gradient(circle, rgba(151, 151, 151, 0), rgba(32, 32, 32, 1) 60% 80%), url('${backgroundImage}')`;
-    document.body.style.backgroundSize = 'cover'; // Make sure the background covers the whole page
-    document.body.style.backgroundPosition = 'center'; // Center the background image
-    document.body.style.transition = 'all 0.8s ease'; // Smooth transition for background change
+    // Step 1: Fade the screen to black
+    document.body.classList.add('fade-to-black'); // Apply fade to black class
+    
+    setTimeout(function() {
+        // Step 2: Change the background image after the black fade
+        document.body.style.backgroundImage = `radial-gradient(circle, rgba(151, 151, 151, 0), rgba(32, 32, 32, 1) 60% 80%), url('${backgroundImage}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        
+        // Step 3: Fade the screen back to the new background image
+        document.body.classList.remove('fade-to-black');
+    }, 1000); // Wait for 1 second (matching the fade-out duration)
 
     // Center the clicked circle
-    
     const circleRect = circle.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
     const circleCenterX = circleRect.left + circleRect.width / 2;
@@ -48,6 +56,7 @@ function handleCircleClick(circle, index) {
     const offsetX = containerCenterX - circleCenterX;
     container.style.transition = 'transform 0.8s ease-in-out'; // Smooth transition
     container.style.transform = `translateX(${offsetX}px)`;
+
     // Gradually scale other circles
     const activeScale = 2;
     circles.forEach((otherCircle, otherIndex) => {
@@ -60,37 +69,15 @@ function handleCircleClick(circle, index) {
             otherCircle.style.transform = `scale(${activeScale})`;
         }
     });
-
-    // {
-    //     const middle_circle = document.querySelectorAll('.circle')[2];
-    //     const mid_pos = middle_circle.getBoundingClientRect().left + (middle_circle.getBoundingClientRect().width / 2);
-    //     const current_circle_left = circle.getBoundingClientRect().left + (circle.getBoundingClientRect().width / 2);
-    //     const difference = Math.abs(mid_pos - (current_circle_left));
-    //     container.style.transform = `translateX(${
-    //         mid_pos > current_circle_left ? difference : -difference
-    //     }px)`
-    //     circle.style.transform = `scale(2)`
-    //     console.log("diff", difference, "center:" ,mid_pos, "right:", current_circle_left);
-
-    // }
 }
 
-
-
-// modeButtons.forEach(button => {
-//     button.addEventListener('click', () => {
-//         const imageSrc = button.getAttribute('data-image'); // Get the image src from data attribute
-//         modeImage.src = imageSrc; // Set the new image
-//         modeImage.style.display = 'block'; // Ensure the image is visible
-//         modeImage.style.transition = 'transform 0.8s ease';
-//     });
-// });
-
+// Adding event listeners for circles
 circles.forEach((circle, index) => {
-    circle.addEventListener('click', (e) =>{
+    circle.addEventListener('click', (e) => {
         handleCircleClick(circle, index);
     });
 });
+
 
 window.addEventListener('load', () => {
     const thirdCircle = circles[2];

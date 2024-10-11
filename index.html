@@ -10,18 +10,19 @@
 <body>
     <header>
         <!-- <div class="header-container"> -->
-            <div class="menu-icon" id="menu-icon">&#9776;
+            <span class="menu-icon" id="menu-icon">&#9776;
                 <div class="menu-content">
                     <li>Item 1</li>
                     <li>Item 2</li>
                     <br>
                     <li>Item 3</li>
                 </div>
-            </div>
+            </span>
+            <span class="profile"></span>
             <div></div>
-            <div class="logo">
+            <span class="logo">
                 <img src="src/pingpong-logo.png" alt="LOGO" class="logo-img">
-            </div>
+            </span>
             <input type="search" placeholder="Search..">
         <!-- </div> -->
     </header>
@@ -86,14 +87,16 @@
             <img src="src/sms.png">
         </div>
         <div class="messanger-list">
-            <div class="profile" id="User"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
-            <div class="profile"></div>
+            <div class="friend-profile" id="User">
+                <div class="friend-profile-status"></div>
+            </div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
+            <div class="friend-profile"></div>
         </div>
     </div>
     <div class="sms">
@@ -111,7 +114,6 @@
                     <!-- Changed input type to "text" -->
                     <input type="text" id="textInput" placeholder="type here ..." required>
                 </span>
-                <button class="folder"></button>
                 <button class="send" onclick="sendMessage()"></button>
             </div>
         </span>
