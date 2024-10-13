@@ -171,3 +171,10 @@ document.getElementById('textInput').addEventListener('keypress', function(event
         sendMessage(); // Call the sendMessage function
     }
 });
+
+const avatarBar = document.querySelectorAll('.pingpong-avatar-bar');
+const profilePhoto = document.querySelectorAll('.profile-photo');
+
+function adjustProfilePhotoSize(){
+
+}
