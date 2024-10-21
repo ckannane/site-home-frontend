@@ -172,6 +172,8 @@ document.getElementById('textInput').addEventListener('keypress', function(event
     }
 });
 
+
+
 const avatarBar = document.querySelectorAll('.pingpong-avatar-bar');
 const profilePhoto = document.querySelectorAll('.profile-photo');
 
