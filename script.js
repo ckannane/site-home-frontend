@@ -1,3 +1,82 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+    const app = document.getElementById('app'); // Target the container where HTML will be injected
+
+    // Login Form HTML in JavaScript (Initial state)
+    const loginForm = `
+        <div class="login">
+            <img src="src/pingpong-logo.png" class="logo-log">
+            <div class="log-contain">
+                <form action="/log.html" method="post">
+                    <input type="text" id="fname" name="fname" placeholder="Username">
+                    <input type="password" id="pwd" name="pwd" placeholder="Password">
+                    <button type="submit" class="connect-button">Connect</button>
+                    <div class="stay-sign">
+                        <input type="checkbox" id="stay-sign" name="stay-sign" value="stay-signed-in">
+                        <label for="stay-sign"> Stay Signed-in</label>
+                    </div>
+                    <div class="line"></div>
+                </form>
+                <div class="Sign-in">
+                    <div class="message">Not registered yet?</div>
+                    <div class="Sign-in-button" id="open-register">Sign-in</div> <!-- Button to open registration form -->
+                </div>
+                <div class="button-logs">
+                    <button class="btn1" type="button"></button>
+                    <button class="btn2" type="button"></button>
+                    <button class="btn3" type="button"></button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Registration Form HTML in JavaScript (Hidden initially)
+    const registerForm = `
+    <div class="registing" style="background-color: rgba(72, 95, 125, 0.6);">
+        <img src="src/pingpong-logo.png" class="logo-log" style="margin: 10px;">
+        <div class="registing">
+            <div class="message">Enterning the requirts for your regist:</div>
+            <form action="/submit_registration" method="post">
+                <input type="text_reg" id="username" name="username" placeholder="Username">
+                <input type="text_reg" id="first-name" name="first-name" placeholder="First Name">
+                <input type="text_reg" id="last-name" name="last-name" placeholder="Last Name">
+                <input type="email_reg" id="email" name="email" placeholder="Email">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <button type="submit" class="submit-button" id="submit_status">Submit</button>
+            </form>            
+            <div class="message" style="color: #fff;">You can also create an account with</div>
+            <div class="button-logs">
+                <button class="btn1" type="button"></button>
+                <button class="btn2" type="button"></button>
+                <button class="btn3" type="button"></button>
+            </div>
+            <div class="close-register" id="close-register">Back to Login</div>
+        </div>
+        <div id="success-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <p>You have successfully registered!</p>
+    </div>
+</div>
+        </div>
+    `;
+
+    // Initially load the login form
+    app.innerHTML = loginForm;
+
+    // Add event listener to switch between forms
+    document.addEventListener('click', function(event) {
+        if (event.target && event.target.id === 'open-register') {
+            app.innerHTML = registerForm; // Inject the registration form HTML
+        }
+
+        if (event.target && event.target.id === 'close-register') {
+            app.innerHTML = loginForm; // Inject the login form HTML
+        }
+    });
+});
+
+
 const circles = document.querySelectorAll('.circle');
 const container = document.querySelector('.circle-container');
 const playModal = document.getElementById('play-modal'); // Get the modal element
@@ -7,11 +86,16 @@ const modeButtons = document.querySelectorAll('.mode-button'); // All game mode 
 const buttons = document.querySelectorAll('.mode-button');
 const switch1 = document.getElementById('switch-1');
 const switch2 = document.getElementById('switch-2');
+
+const success_submit_Modal = document.getElementById('modal-content');
+
+document.querySelectorAll('submit-button').addEventListener('click', () => {
+    success_submit_Modal.style.display = 'block'; // Show modal
+});
 // Function to handle circle click event
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+
+
 
 
 function handleCircleClick(circle, index) {
@@ -25,6 +109,7 @@ function handleCircleClick(circle, index) {
     circle.classList.add('active');
 
     // Show modal if circle 3 is clicked
+    
     if (circle.id === 'circle3') {
         const playText = circle.querySelector('.circle-text');
         playText.addEventListener('click', () => {
@@ -69,7 +154,7 @@ function handleCircleClick(circle, index) {
             otherCircle.style.transform = `scale(${activeScale})`;
         }
     });
-}
+};
 
 // Adding event listeners for circles
 circles.forEach((circle, index) => {
@@ -176,7 +261,3 @@ document.getElementById('textInput').addEventListener('keypress', function(event
 
 const avatarBar = document.querySelectorAll('.pingpong-avatar-bar');
 const profilePhoto = document.querySelectorAll('.profile-photo');
-
-function adjustProfilePhotoSize(){
-
-}

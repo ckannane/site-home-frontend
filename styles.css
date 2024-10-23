@@ -437,6 +437,29 @@ input[type="password"]:hover {
     margin-bottom: 20px;   /* Space below the logo */
 }
 
+.connect-button {
+    padding: 8px 110px;
+    display: inline-block;
+    background-color: #202020; /* Green background */
+    color: white; /* White text color */
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    border: 2px solid #202020; /* Border color matching the background */
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+    transition: border-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out, color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+
+.connect-button:hover {
+    background-color: #ffcc00; /* Darker green background on hover */
+    border-color: #ffcc00; /* Darker border on hover */
+    color: #202020;
+    box-shadow: 0px 0px 50px rgb(255, 196, 0);
+    transition: box-shadow 0.8s ease-in-out,color 0.5s ease-in-out,background-color 0.5s ease-in-out;
+}
+
 .submit-button {
     padding: 8px 110px;
     display: inline-block;
@@ -523,7 +546,7 @@ input[type="password"]:hover {
 .registing{
     position: relative;
     width: 600px;
-    height: 600px;
+    height: 800px;
     background-color: rgba(255, 208, 0, 0.187);
     border-radius: 70px;
     border: 6px solid #FBCC0A;
@@ -991,9 +1014,9 @@ input[type=text-chat]{
     border: 2px solid #ffe8aa;
     display: grid;
     align-content: start;
-    gap: 30px;
+    gap: 50px;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 40px;
     border-radius: 20px;
     width: 100%;
     height: 82%;
@@ -1012,23 +1035,26 @@ input[type=text-chat]{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #2ea453;
+    background-color: #d7d7d7;
     z-index: 1;
 }
 .score_bar{
     display: flex;
     align-self: center;
-    width: 390px;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 360px;
     height: 80px;
-    border-radius: 10px;
-    background-color: #94ff12;
+    border-radius: 50px;
+    background-color: #8e8e8e;
     z-index: 0;
 }
 .challenger_bar{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #2ea453;
+    background-color: #d7d7d7;
     z-index: 1;
 }
 
@@ -1045,6 +1071,26 @@ input[type=text-chat]{
 }
 
 .registing input[type="text_reg"]:hover {
+    width: 450px;
+    padding: 13px 13px;
+    color: rgb(255, 196, 0);
+    box-shadow: 0px 0px 10px rgb(255, 196, 0);
+    transition: all 0.2s ease-out;
+}
+
+.registing input[type="email_reg"] {
+    outline: none;
+    margin: 10px;
+    width: 400px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 20px;
+    color:#fade6d;
+    background-color: #181818;
+    border: 1px solid #ffc800;
+}
+
+.registing input[type="email_reg"]:hover {
     width: 450px;
     padding: 13px 13px;
     color: rgb(255, 196, 0);
@@ -1073,6 +1119,81 @@ input[type=text-chat]{
     border: 3px solid #ffc800;
     transition: all 0.2s ease-out;
 }
+
+.score_main{
+    font-size: 58px;
+    color: #fff;
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.score_guest{
+    font-size: 58px;
+    color: #fff;
+    margin-right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.status{
+    font-size: 38px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.close-register{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #dfdfdf;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(141, 36, 36);
+    transition: all 0.2s ease;
+
+}
+
+.close-register:hover{
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 40px red;
+}
+
+/* The Modal (hidden by default) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:1200px) {
     .circle{
