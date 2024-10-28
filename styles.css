@@ -72,6 +72,8 @@ header {
     align-items: center; 
     width: 200px;
     height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     background-color: #FBCC0A;
     border-radius: 50%;
     cursor: pointer;
@@ -642,7 +644,7 @@ input[type=search]{
 .messanger-list{
     padding-top: 5px;
     width: 60px;
-    height: 800px;
+    height: 2000px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     background-color:#FBCC0A;
@@ -675,7 +677,7 @@ input[type=search]{
 }
 
 .messanger.active{
-    top: 32%;
+    top: 45%;
     transition: all 0.3s ease-in-out;
 }
 
@@ -954,9 +956,11 @@ input[type=text-chat]{
     background-position: center;
     background-size: cover; /* This will ensure the image covers the entire div */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-size: 90%;
+    background-size: 85%;
     max-width: 400px;
     max-height: 600px;
+    min-width: 200px;
+    min-height: 400px;
 }
 
 .profile-photo{
@@ -966,13 +970,32 @@ input[type=text-chat]{
     background-image: url(src/profile.png);
     background-position: center;
     background-size: cover; 
-    width: 85%;
+    /* width: 85%; */
     height: 57%;
+    transform: scale(1.1);
+    aspect-ratio: 1/1;
     border-radius: 50%;
 }
 .profile-photo:hover{
     box-shadow: inset 0px 0px 50px #fffac9;
 }
+
+.edit-button{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-image: url(src/pen.png);
+    background-size: 200px 150px; /* Set width and height for the background image */
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: 20% 20%; 
+    border-radius: 50%;
+}
+
+.edit-button:hover{
+    opacity: 0.8;
+}
+
 .welcome-message{
     color: #fff;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1140,6 +1163,17 @@ input[type=text-chat]{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.display-mode{
+    margin-left: 10px;
+    margin-bottom: 40px;
+    background-image: url(src/store.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 350px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px #000000;
+}
 .close-register{
     margin-top: 20px;
     display: flex;
@@ -1162,8 +1196,33 @@ input[type=text-chat]{
     box-shadow: 0px 0px 40px red;
 }
 
-/* The Modal (hidden by default) */
-.modal {
+.tools_profile{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+}
+
+.request_list{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #2e2e2d;
+    border: 2px solid #fade6d;
+    background-image: url(src/addfriend.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-size: 60% 60%;
+    border-radius: 50px;
+}
+
+.request_list:hover{
+    background-color: #896917; 
+}
+
+.block_modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
@@ -1171,31 +1230,10 @@ input[type=text-chat]{
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
 }
 
-/* Modal Content */
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-}
-
-/* Close button */
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1350px) {
     .circle{
         width: 150px;
         height: 150px;
