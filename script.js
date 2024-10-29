@@ -21,6 +21,43 @@ const block_mg = document.querySelectorAll('.block_modal');
 const pend_button = document.getElementById('pending_list');
 const friends = document.querySelector('.messanger-list');
 
+// Select each element by its ID
+const pendingListButton = document.getElementById('pending_list');
+const blockListButton = document.getElementById('block_list');
+const shareProfileButton = document.getElementById('share_profil');
+const pendingModal = document.getElementById('pendingModal');
+const closeModalButton = document.querySelector('.close_modal');
+
+// Show the modal when the pending list button is clicked
+pendingListButton.addEventListener('click', function() {
+    pendingModal.style.display = 'flex';
+});
+
+// Close the modal when the close button is clicked
+closeModalButton.addEventListener('click', function() {
+    pendingModal.style.display = 'none';
+});
+
+// Optional: Close the modal if the user clicks outside of the modal content
+window.addEventListener('click', function(event) {
+    if (event.target === pendingModal) {
+        pendingModal.style.display = 'none';
+    }
+});
+
+
+// Event listener for blocking actions
+blockListButton.addEventListener('click', function() {
+    // Your code for block list handling goes here
+    console.log('Block list clicked');
+});
+
+// Event listener for sharing profile
+shareProfileButton.addEventListener('click', function() {
+    // Your code for sharing profile goes here
+    console.log('Share profile clicked');
+});
+
 friends.addEventListener('click', function (e) {
     const nigga = e.target.closest('.friend-profile')
     if (nigga) {
@@ -92,6 +129,7 @@ friends.addEventListener('click', function (e) {
 
     };
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const app = document.getElementById('app'); // Target the container where HTML will be injected
 
