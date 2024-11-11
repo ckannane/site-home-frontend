@@ -1,0 +1,66 @@
+body {
+	display: flex;
+	background-color: rgb(255, 0, 0);
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.display_waiting{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+}
+
+.bar_queue {
+	display: flex;
+	justify-content: center;       /* Center horizontally */
+	align-items: center;           /* Center vertically */
+	flex-direction: column;  
+	border-radius: 25px;
+	background-color: rgb(64, 64, 64);
+	width: 400px;
+	height: 100px;
+	padding: 20px;                 /* Optional: adds some padding inside */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for a subtle lift */
+	border: 2px solid #ffffff63;
+}
+
+.Annancement {
+	color: rgb(255, 255, 255);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;           /* Center text within the element */
+	font-size: 1.2rem;             /* Optional: adjust font size */
+}
+
+.player_in_queue{
+	display: flex;
+	margin :10px;
+	width: 90%;
+	height: 50px;
+	border-radius: 10px;
+	background-color: rgb(28, 28, 28);
+	gap:5px;
+}
+
+.players_in{
+	display: flex;
+	height: 100%;
+	width: 25%;
+	background-color: black;
+	border-radius: 5px;
+	border: 0.5px solid rgb(255, 242, 0);
+	transition: all 0.2s ease-in-out;
+}
+.players_in.active{
+	box-shadow: inset 0px 0px 10px rgb(255, 200, 0), 0px 0px 10px rgb(255, 200, 0);
+	background-color:  rgb(255, 242, 0);
+}

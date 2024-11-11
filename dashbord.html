@@ -57,50 +57,60 @@
 		<div class="left-side-dashbord">
             <div class="profile-dashbord">
                 <div class="username-profile-dashbord">USER_name</div>
-                <div class="lvl-profile-dashbord">lvl 100</div>
-                <div class="expbar-profile-dashbord">
-                    <div class="user_exp"></div>
-                </div>
+                <span class="expbar-profile-dashbord">
+                    <span class="user_exp">
+                        <span class="level">lvl 100</span>
+                        <span class="Experience">80%</span>
+                    </span>
+                    
+                </span>
             </div>
             <div class="match-history-bar">
-                <div class="history-bar">
-                    <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
-                    <span class="score_bar" style="background-color: green;">
-                        <span class="score_main">5</span>
-                        <span class="status">WIN</span>
-                        <span class="score_guest">2</span>
-                    </span>
-                    <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
+                <div class="btn_static">
+                    <span class="btn_static_click" id="history_bar">HISTORY</span>
+                    <span class="btn_static_click" id="achivements_bar">ACHIVEMENTS</span>
+                    <span class="btn_static_click" id="rank_bar">RANK</span>
                 </div>
-                <div class="history-bar">
-                    <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
-                    <span class="score_bar" style="background-color: brown;">
-                        <span class="score_main">1</span>
-                        <span class="status">LOSE</span>
-                        <span class="score_guest">4</span>
-                    </span>
-                    <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
-                </div>
-                <div class="history-bar">
-                    <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
-                    <span class="score_bar" style="background-color: rgb(190, 175, 42);">
-                        <span class="score_main">1</span>
-                        <span class="status">DRAW</span>
-                        <span class="score_guest">1</span>
-                    </span>
-                    <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
-                        <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
-                    </span>
+                <div class="HISTORYdata">
+                    <div class="history-bar">
+                        <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                        <span class="score_bar" style="background-color: rgb(18, 87, 18);">
+                            <span class="score_main">5</span>
+                            <span class="status">WIN</span>
+                            <span class="score_guest">2</span>
+                        </span>
+                        <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                    </div>
+                    <div class="history-bar">
+                        <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                        <span class="score_bar" style="background-color: rgb(107, 29, 29);">
+                            <span class="score_main">0</span>
+                            <span class="status">LOSE</span>
+                            <span class="score_guest">4</span>
+                        </span>
+                        <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                    </div>
+                    <div class="history-bar">
+                        <span class="my_profile_bar" style="border: 2px solid rgb(66, 193, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                        <span class="score_bar" style="background-color: rgb(91, 84, 23);">
+                            <span class="score_main">1</span>
+                            <span class="status">DRAW</span>
+                            <span class="score_guest">1</span>
+                        </span>
+                        <span class="challenger_bar" style="border: 2px solid rgb(193, 38, 38);">
+                            <img src="src/profile.png" style="object-fit: cover; width: 100px; height: 100px;">
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,6 +135,7 @@
         </div>
     </div>
     <div class="sms" id="chat"></div>
+    
     <div class="pending_friends_modal" id="pendingModal">
         <div class="modal_content">
             <span class="close_modal">&times;</span>
@@ -151,7 +162,23 @@
             <!-- Add your pending requests content here -->
         </div>
     </div>
-    
+
+
+    <div class="Block_modal" id="blockModal">
+        <div class="block_modal_content">
+            <span class="close_modal">&times;</span>
+            <div class="block_list" id="User">
+                <span class="fr_id">
+                    <span class="fr_avatar"></span>
+                    <span class="fr_name">USER</span>
+                </span>
+                <span class="requesting">
+                    <span class="unblock_fr">UnBlock</span>
+                </span>
+            </div>
+            <!-- Add your pending requests content here -->
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

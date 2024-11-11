@@ -26,36 +26,23 @@ const pendingListButton = document.getElementById('pending_list');
 const blockListButton = document.getElementById('block_list');
 const shareProfileButton = document.getElementById('share_profil');
 const pendingModal = document.getElementById('pendingModal');
-const closeModalButton = document.querySelector('.close_modal');
+const BlockgModal = document.getElementById('blockModal');
+const closeModalButton = document.querySelectorAll('.close_modal');
 
-// Show the modal when the pending list button is clicked
-pendingListButton.addEventListener('click', function() {
-    pendingModal.style.display = 'flex';
-});
-
-// Close the modal when the close button is clicked
-closeModalButton.addEventListener('click', function() {
-    pendingModal.style.display = 'none';
-});
-
-// Optional: Close the modal if the user clicks outside of the modal content
-window.addEventListener('click', function(event) {
-    if (event.target === pendingModal) {
-        pendingModal.style.display = 'none';
-    }
-});
+const cata = document.querySelectorAll('.btn_static_click');
+const hist = document.getElementById('history_bar');
+const arch = document.getElementById('achivements_bar');
+const rank = document.getElementById('rank_bar');
 
 
-// Event listener for blocking actions
-blockListButton.addEventListener('click', function() {
-    // Your code for block list handling goes here
-    console.log('Block list clicked');
-});
-
-// Event listener for sharing profile
-shareProfileButton.addEventListener('click', function() {
-    // Your code for sharing profile goes here
-    console.log('Share profile clicked');
+cata.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove the 'active' class from all cata
+        cata.forEach(btn => btn.classList.remove('active'));
+        
+        // Add the 'active' class to the clicked button
+        button.classList.add('active');
+    });
 });
 
 friends.addEventListener('click', function (e) {
