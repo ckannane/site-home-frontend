@@ -1488,6 +1488,59 @@ input[type=text-chat]{
     background-color: #626262;
 }
 
+.modal_settings{
+    width: 100%;
+    height: 100%;
+    background-color: #00000057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings_window{
+    width: 50%;
+    height: 80%;
+    min-width: 700px;
+    min-height: 700px;
+    max-width: 1000px;
+    max-height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1d1d;
+    border-radius: 50px;
+    border: 3px solid #fabc13;
+}
+.switch_panel{
+    width: 50%;
+    height: 90%;
+    border: 3px solid #fabc13;
+}
+.edit_panel{
+    display: flex;
+    width: 50%;
+    height: 90%;
+    border: 3px solid #fabc13;
+}
+
+.setting_bnt{
+    width: 100%;
+    height: 10%;
+    background-color: #fabc1393;
+    color: #fff;
+    font-size: 26px;
+    display: flex;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.setting_bnt:hover{
+    color: #000000;
+    background-color: #ffbb00;
+    box-shadow: inset 0px 0px 50px #fad337;
+}
 @media screen and (max-width:1350px) {
     .circle{
         width: 150px;
