@@ -1507,23 +1507,31 @@ input[type=text-chat]{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1d1d1d;
+    background-color: #e0991f;
     border-radius: 50px;
     border: 3px solid #fabc13;
 }
 .switch_panel{
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
     height: 90%;
-    border: 3px solid #fabc13;
+    gap :2px;
 }
 .edit_panel{
     display: flex;
-    width: 50%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 60%;
     height: 90%;
     border: 3px solid #fabc13;
+    background-color: #2f2f2f;
+    border-radius: 15px;
 }
 
 .setting_bnt{
+    border-radius: 15px;
     width: 100%;
     height: 10%;
     background-color: #fabc1393;
@@ -1541,6 +1549,20 @@ input[type=text-chat]{
     background-color: #ffbb00;
     box-shadow: inset 0px 0px 50px #fad337;
 }
+
+.edit_panel input[type="setting"]
+{
+    outline: none;
+    margin: 10px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    border-radius: 20px;
+    color:#fade6d;
+    background-color: #181818;
+    border: 1px solid #ffc800;
+}
+
 @media screen and (max-width:1350px) {
     .circle{
         width: 150px;
