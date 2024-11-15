@@ -9,17 +9,43 @@
 </head>
 <body>
     <div class="modal_settings">
-		<div class="settings_window">
-			<span class="switch_panel">
-				<div class="setting_bnt user_info">Profil</div>
-				<div class="setting_bnt security_info">Security</div>
-				<div class="setting_bnt control_info">Control</div>
-			</span>
-			<span class="edit_panel">
-				<div class="message">Change your</div>
-				<input type="setting" placeholder="username">
-			</span>
-		</div>
+			<div class="settings_window">
+				<span class="switch_panel">
+					<div class="setting_bnt" data-target="UserInfo">Profile</div>
+					<div class="setting_bnt" data-target="SecurityInfo">Security</div>
+					<div class="setting_bnt" data-target="ControlInfo">Control</div>
+				</span>
+			
+				<span class="edit_panel active" id="UserInfo">
+					<div class="message">Change your profile information below</div>
+					<input type="setting" id="new_username" name="username" placeholder="Username">
+					<input type="setting" id="new_first-name" name="first-name" placeholder="First Name">
+					<input type="setting" id="new_last-name" name="last-name" placeholder="Last Name">
+					<input type="setting" id="new_email" name="email" placeholder="Email">
+					<input type="setting" id="new_email_1" name="email" placeholder="Confirmed Email">
+					<div class="Confirmed_change">Apply Change</div>
+				</span>
+			
+				<!-- Security Panel -->
+				<span class="edit_panel" id="SecurityInfo">
+					<div class="message">Change your security settings below</div>
+					<input type="setting" id="new_pwd" name="NewPassword" placeholder="New Password">
+					<input type="setting" id="Confirmed_new_pwd" name="Confirmed_NewPassword" placeholder="Confirmed New Password">
+					<div class="checkbox-container">
+						<input type="checkbox" id="stay-sign" name="stay-sign" value="stay-signed-in">
+						<label for="stay-sign">Activate two-factor authentication</label>
+					</div>
+					<div class="Confirmed_change">Apply Change</div>
+				</span>
+			
+				<!-- Control Panel -->
+				<span class="edit_panel" id="ControlInfo">
+					<div class="message">Adjust control settings below</div>
+
+					<div class="Confirmed_change">Apply Change</div>
+				</span>
+			</div>
+			
 	</div>
     <script src="script.js"></script>
 </body>

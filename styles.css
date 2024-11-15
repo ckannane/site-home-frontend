@@ -1563,6 +1563,99 @@ input[type=text-chat]{
     border: 1px solid #ffc800;
 }
 
+.Confirmed_change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    background-color: green;
+    color: #ffffff;
+    border-radius: 15px;
+    margin-top: auto; 
+    margin-bottom: 20px; 
+    transition: all 0.3s ease-in-out;
+}
+
+.Confirmed_change:hover{
+    font-size: 13px;
+    color: #000000;
+    background-color: #49ff3c;
+    box-shadow: 0px 0px 10px #49ff3c;
+}
+.edit_panel {
+    display: none; /* Hide all panels initially */
+    flex-direction: column;
+}
+
+.edit_panel.active {
+    display: flex; /* Show only the active panel */
+}
+
+/* Container for positioning */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox appearance */
+.checkbox-container label {
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkbox */
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Create the custom checkbox appearance */
+.checkbox-container label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #77ff00; /* Custom border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* When the checkbox is checked, change the appearance */
+.checkbox-container input[type="checkbox"]:checked + label::before {
+    background-color: #77ff00; /* Change background when checked */
+    border-color: #77ff00; /* Match border with background */
+}
+
+/* Checkmark (using ::after) when checked */
+.checkbox-container input[type="checkbox"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Optional: Hover effect for better interaction */
+.checkbox-container label:hover::before {
+    border-color: #77ff00; /* Change border color on hover */
+}
+
+
+
 @media screen and (max-width:1350px) {
     .circle{
         width: 150px;

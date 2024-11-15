@@ -35,6 +35,27 @@ const arch = document.getElementById('achivements_bar');
 const rank = document.getElementById('rank_bar');
 
 
+// Add click event listeners to all buttons
+document.querySelectorAll('.setting_bnt').forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove 'active' class from all panels
+        document.querySelectorAll('.edit_panel').forEach(panel => {
+            panel.classList.remove('active');
+        });
+
+        // Get the target panel's ID from the data-target attribute
+        const targetPanelId = button.getAttribute('data-target');
+        
+        // Show the target panel by adding the 'active' class
+        const targetPanel = document.getElementById(targetPanelId);
+        if (targetPanel) {
+            targetPanel.classList.add('active');
+        }
+    });
+});
+
+
+
 cata.forEach(button => {
     button.addEventListener('click', function() {
         // Remove the 'active' class from all cata
@@ -44,6 +65,8 @@ cata.forEach(button => {
         button.classList.add('active');
     });
 });
+
+
 
 friends.addEventListener('click', function (e) {
     const nigga = e.target.closest('.friend-profile')
