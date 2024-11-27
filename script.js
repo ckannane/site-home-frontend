@@ -29,10 +29,6 @@ const pendingModal = document.getElementById('pendingModal');
 const BlockgModal = document.getElementById('blockModal');
 const closeModalButton = document.querySelectorAll('.close_modal');
 
-const cata = document.querySelectorAll('.btn_static_click');
-const hist = document.getElementById('history_bar');
-const arch = document.getElementById('achivements_bar');
-const rank = document.getElementById('rank_bar');
 
 
 // Add click event listeners to all buttons
@@ -42,7 +38,7 @@ document.querySelectorAll('.setting_bnt').forEach(button => {
         document.querySelectorAll('.edit_panel').forEach(panel => {
             panel.classList.remove('active');
         });
-
+        
         // Get the target panel's ID from the data-target attribute
         const targetPanelId = button.getAttribute('data-target');
         
@@ -54,17 +50,42 @@ document.querySelectorAll('.setting_bnt').forEach(button => {
     });
 });
 
-
+const cata = document.querySelectorAll('.btn_static_click');
+const histData = document.querySelector('.HISTORYdata');
+const archData = document.querySelector('.ACHIVEMENTSdata');
+const rankData = document.querySelector('.RANKYdata');
 
 cata.forEach(button => {
-    button.addEventListener('click', function() {
-        // Remove the 'active' class from all cata
+    button.addEventListener('click', function () {
+        // Remove the 'active' class from all buttons
         cata.forEach(btn => btn.classList.remove('active'));
         
         // Add the 'active' class to the clicked button
         button.classList.add('active');
+        
+        // Show and hide sections based on the clicked button
+        if (button.id === 'history_bar') {
+            histData.style.display = 'block';
+            archData.style.display = 'none';
+            rankData.style.display = 'none';
+        } else if (button.id === 'achivements_bar') {
+            histData.style.display = 'none';
+            archData.style.display = 'block';
+            rankData.style.display = 'none';
+        } else if (button.id === 'rank_bar') {
+            histData.style.display = 'none';
+            archData.style.display = 'none';
+            rankData.style.display = 'block';
+        }
     });
 });
+
+// Set default view to 'HISTORY'
+document.getElementById('history_bar').classList.add('active');
+histData.style.display = 'block';
+archData.style.display = 'none';
+rankData.style.display = 'none';
+
 
 
 

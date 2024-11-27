@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #252525;
+    background-size: cover;
+    background-position: center;
+    /* background: radial-gradient(circle, green, rgba(0, 0, 0, 1)); */
+    transition: background-image 5s;
+    overflow: hidden;
+}
+
+.play-with-moba{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+}
+
+.play-with-moba-bar{
+    width: 600px;
+    height: 300px;
+    border-radius: 25px;
+    border:5px solid #ffc400;
+    background-color: #252525;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-notif{
+    color: #fff;
+    font-size: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-pic-play-with{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #454545;
+    background-image: url(src/profile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.requeat-play-with{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    gap: 50px;
+}
+.request{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.request.accepted{
+    border: 2px solid rgb(50, 220, 20);
+    color: rgb(50, 220, 20);
+}
+
+.request.accepted:hover{
+    background-color: rgb(50, 220, 20);
+    color: #454545;
+}
+
+.request.rejected{
+    border: 2px solid rgb(220, 20, 20);
+    color:  rgb(220, 20, 20);
+}
+
+.request.rejected:hover{
+    background-color:  rgb(220, 20, 20);
+    color: #454545;
+}
